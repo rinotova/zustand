@@ -2,7 +2,7 @@
 
 ## Demo
 
-[Kanban board](https://nextjs-hangman-lac.vercel.app/)
+[Kanban board](https://celebrated-beignet-8a210e.netlify.app)
 
 ## Kanban board
 
