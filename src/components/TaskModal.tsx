@@ -56,6 +56,7 @@ function TaskModal({
           placeholder='Write something...'
           value={text}
           onChange={(e) => setText(e.target.value)}
+          autoFocus
         />
         <button
           type='submit'

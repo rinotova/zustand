@@ -1,12 +1,13 @@
 .column {
   background: var(--COLOR-GRAY-DARK);
-  min-height: 100dvh;
   color: #fff;
   width: 33%;
   max-width: 20rem;
-  margin: 0 0.5rem;
+  margin: 0;
   border-radius: 4px;
   padding: 0.5rem;
+  flex-grow: 1;
+  border: dashed transparent 1px;
 }
 
 .titleWrapper {
