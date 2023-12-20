@@ -14,6 +14,7 @@
     "classnames": "^2.3.2",
     "lucide-react": "^0.298.0",
     "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
     "uuid": "^9.0.1",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
+    "@types/react-beautiful-dnd": "^13.1.7",
     "@types/react-dom": "^18.2.17",
     "@types/react-modal": "^3.16.3",
     "@types/uuid": "^9.0.7",
