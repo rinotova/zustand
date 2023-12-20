@@ -13,7 +13,8 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    width: '60%',
+    width: '22rem',
+    borderColor: 'black',
   },
 };
 
@@ -60,7 +61,7 @@ function TaskModal({
         />
         <button
           type='submit'
-          className='cursor-pointer border border-blue-50 bg-green-200'
+          className='cursor-pointer border border-blue-50 bg-blue-700 text-white '
         >
           Add
         </button>
