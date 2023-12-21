@@ -1,21 +1,12 @@
 import { create } from 'zustand';
 import { v4 as uuidv4 } from 'uuid';
-import { LocalStorageStore, Store, TaskType } from './types';
+import { Store, TaskType } from './types';
 import { persist } from 'zustand/middleware';
-
-const getTasksFromLocalStorage = () => {
-  const localStorageTasksStore = localStorage.getItem('tasks-storage');
-  const parsedStore: LocalStorageStore = localStorageTasksStore
-    ? JSON.parse(localStorageTasksStore)
-    : null;
-
-  return parsedStore?.state.tasks || [];
-};
 
 export const useStore = create<Store>()(
   persist(
     (set) => ({
-      tasks: [...getTasksFromLocalStorage()],
+      tasks: [],
       draggedTask: null,
       addTask: (title: TaskType['title'], state: TaskType['state']) =>
         set((store) => ({
