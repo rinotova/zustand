@@ -1,15 +1,12 @@
 import classNames from 'classnames';
 import './Task.css';
-import { useStore } from '../store';
+import { useGetTask, useRemoveTask } from '../store';
 import { DeleteIcon } from 'lucide-react';
 import { Draggable } from 'react-beautiful-dnd';
 
 function Task({ taskId, index }: { taskId: string; index: number }) {
-  const task = useStore((store) =>
-    store.tasks.find((storeTask) => storeTask.id === taskId)
-  );
-
-  const removeTask = useStore((store) => store.removeTask);
+  const task = useGetTask(taskId);
+  const removeTask = useRemoveTask();
 
   if (!task) {
     return null;

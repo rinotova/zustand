@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react';
 import Modal from 'react-modal';
 import { TaskState } from '../types';
-import { useStore } from '../store';
+import { useAddTask } from '../store';
 
 Modal.setAppElement('#root');
 
@@ -27,7 +27,7 @@ function TaskModal({
   state: TaskState;
   onClose: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
-  const addTask = useStore((store) => store.addTask);
+  const addTask = useAddTask();
   const [text, setText] = useState('');
   const [isOpen, setIsOpen] = useState(open);
 

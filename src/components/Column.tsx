@@ -1,6 +1,5 @@
-import { useShallow } from 'zustand/react/shallow';
 import { useAutoAnimate } from '@formkit/auto-animate/react';
-import { useStore } from '../store';
+import { useFilteredTasksByState, useAllTasks } from '../store';
 import { TaskState } from '../types';
 import './Column.css';
 import Task from './Task';
@@ -10,13 +9,11 @@ import classNames from 'classnames';
 import { Droppable } from 'react-beautiful-dnd';
 
 function Column({ state }: { state: TaskState }) {
-  const [parent] = useAutoAnimate(/* optional config */);
+  const [parent] = useAutoAnimate();
   const [isTaskModalOpen, setIsTaskModalOpen] = useState(false);
-  const tasks = useStore(
-    useShallow((store) => store.tasks.filter((task) => task.state === state))
-  );
 
-  const allTasks = useStore(useShallow((store) => store.tasks));
+  const filteredTasksByState = useFilteredTasksByState(state);
+  const allTasks = useAllTasks();
 
   const openModal = () => {
     setIsTaskModalOpen((state) => !state);
@@ -38,7 +35,7 @@ function Column({ state }: { state: TaskState }) {
             </div>
 
             <ul ref={parent}>
-              {tasks.map((task) => (
+              {filteredTasksByState.map((task) => (
                 <Task
                   key={task.id}
                   taskId={task.id}

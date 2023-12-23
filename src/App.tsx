@@ -1,13 +1,13 @@
 import { DragDropContext, DragStart, DropResult } from 'react-beautiful-dnd';
 import './App.css';
 import Column from './components/Column';
-import { useStore } from './store';
+import { useDraggedTask, useMoveTask, useSetDraggedTask } from './store';
 import { TaskState } from './types';
 
 function App() {
-  const setDraggedTask = useStore((store) => store.setDraggedTask);
-  const draggedTask = useStore((store) => store.draggedTask);
-  const moveTask = useStore((store) => store.moveTask);
+  const setDraggedTask = useSetDraggedTask();
+  const draggedTask = useDraggedTask();
+  const moveTask = useMoveTask();
 
   const onDragEnd = (result: DropResult) => {
     if (!draggedTask) {
